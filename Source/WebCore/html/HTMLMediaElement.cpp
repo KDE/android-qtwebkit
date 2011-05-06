@@ -931,7 +931,7 @@ void HTMLMediaElement::setNetworkState(MediaPlayer::NetworkState state)
     }
 
     if (hasMediaControls())
-        mediaControls()->changedNetworkState();
+        mediaControls()->updateStatusDisplay();
 }
 
 void HTMLMediaElement::mediaPlayerReadyStateChanged(MediaPlayer*)
@@ -1023,8 +1023,11 @@ void HTMLMediaElement::setReadyState(MediaPlayer::ReadyState state)
         shouldUpdateDisplayState = true;
     }
 
-    if (shouldUpdateDisplayState)
+    if (shouldUpdateDisplayState) {
         updateDisplayState();
+        if (hasMediaControls())
+            mediaControls()->updateStatusDisplay();
+    }
 
     updatePlayState();
 }
