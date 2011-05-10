@@ -778,12 +778,6 @@ void LayoutTestController::setMockDeviceOrientation(bool canProvideAlpha, double
     DumpRenderTreeSupportQt::setMockDeviceOrientation(canProvideAlpha, alpha, canProvideBeta, beta, canProvideGamma, gamma);
 }
 
-void LayoutTestController::setGeolocationPermission(bool allow)
-{
-    setGeolocationPermissionCommon(allow);
-    DumpRenderTreeSupportQt::setMockGeolocationPermission(m_drt->webPage(), allow);
-}
-
 QVariant LayoutTestController::shadowRoot(const QWebElement& element)
 {
     return DumpRenderTreeSupportQt::shadowRoot(element);
@@ -797,6 +791,14 @@ QVariant LayoutTestController::ensureShadowRoot(const QWebElement& element)
 void LayoutTestController::removeShadowRoot(const QWebElement& element)
 {
     DumpRenderTreeSupportQt::removeShadowRoot(element);
+}
+
+void LayoutTestController::setGeolocationPermission(bool allow)
+{
+    setGeolocationPermissionCommon(allow);
+    QList<WebCore::WebPage*> pages = m_drt->getAllPages();
+    foreach (WebCore::WebPage* page, pages)
+        DumpRenderTreeSupportQt::setMockGeolocationPermission(page, allow);
 }
 
 int LayoutTestController::numberOfPendingGeolocationPermissionRequests()
@@ -817,12 +819,16 @@ void LayoutTestController::setGeolocationPermissionCommon(bool allow)
 
 void LayoutTestController::setMockGeolocationError(int code, const QString& message)
 {
-    DumpRenderTreeSupportQt::setMockGeolocationError(m_drt->webPage(), code, message);
+    QList<WebCore::WebPage*> pages = m_drt->getAllPages();
+    foreach (WebCore::WebPage* page, pages)
+        DumpRenderTreeSupportQt::setMockGeolocationError(page, code, message);
 }
 
 void LayoutTestController::setMockGeolocationPosition(double latitude, double longitude, double accuracy)
 {
-    DumpRenderTreeSupportQt::setMockGeolocationPosition(m_drt->webPage(), latitude, longitude, accuracy);
+    QList<WebCore::WebPage*> pages = m_drt->getAllPages();
+    foreach (WebCore::WebPage* page, pages)
+        DumpRenderTreeSupportQt::setMockGeolocationPosition(page, latitude, longitude, accuracy);
 }
 
 void LayoutTestController::addMockSpeechInputResult(const QString& result, double confidence, const QString& language)
