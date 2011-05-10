@@ -190,7 +190,6 @@ void MediaPlayerPrivateAVFoundation::playabilityKnown()
 {
     LOG(Media, "MediaPlayerPrivateAVFoundation::playabilityKnown(%p)", this);
 
-    updateStates();
     if (m_assetIsPlayable)
         return;
 
@@ -305,7 +304,7 @@ IntSize MediaPlayerPrivateAVFoundation::naturalSize() const
 
 void MediaPlayerPrivateAVFoundation::setNaturalSize(IntSize size)
 {
-    LOG(Media, "MediaPlayerPrivateAVFoundation:sizeChanged(%p) - size = %d x %d", this, size.width(), size.height());
+    LOG(Media, "MediaPlayerPrivateAVFoundation:setNaturalSize(%p) - size = %d x %d", this, size.width(), size.height());
 
     IntSize oldSize = m_cachedNaturalSize;
     m_cachedNaturalSize = size;
@@ -509,12 +508,10 @@ void MediaPlayerPrivateAVFoundation::metadataLoaded()
 {
     m_loadingMetadata = false;
     tracksChanged();
-    updateStates();
 }
 
 void MediaPlayerPrivateAVFoundation::rateChanged()
 {
-    updateStates();
     m_player->rateChanged();
 }
 
@@ -522,7 +519,6 @@ void MediaPlayerPrivateAVFoundation::loadedTimeRangesChanged()
 {
     m_cachedLoadedTimeRanges = 0;
     m_cachedMaxTimeLoaded = 0;
-    updateStates();
 
     // For some media files, reported duration is estimated and updated as media is loaded
     // so report duration changed when the estimate is upated.
@@ -731,9 +727,11 @@ void MediaPlayerPrivateAVFoundation::dispatchNotification()
         break;
     case Notification::ItemSeekableTimeRangesChanged:
         seekableTimeRangesChanged();
+        updateStates();
         break;
     case Notification::ItemLoadedTimeRangesChanged:
         loadedTimeRangesChanged();
+        updateStates();
         break;
     case Notification::ItemPresentationSizeChanged:
         sizeChanged();
@@ -749,6 +747,7 @@ void MediaPlayerPrivateAVFoundation::dispatchNotification()
         updateStates();
         break;
     case Notification::PlayerRateChanged:
+        updateStates();
         rateChanged();
         break;
     case Notification::PlayerTimeChanged:
@@ -759,8 +758,10 @@ void MediaPlayerPrivateAVFoundation::dispatchNotification()
         break;
     case Notification::AssetMetadataLoaded:
         metadataLoaded();
+        updateStates();
         break;
     case Notification::AssetPlayabilityKnown:
+        updateStates();
         playabilityKnown();
         break;
     case Notification::None:
