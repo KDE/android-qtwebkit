@@ -2,6 +2,16 @@
 
         Unreviewed.
 
+        [Qt][Mac] Add platform specific expected result for plugins/plugin-javascript-access.html,
+        which is same as the platform independent one, but differs from the general Qt specific.
+
+        * platform/qt-mac/plugins: Added.
+        * platform/qt-mac/plugins/plugin-javascript-access-expected.txt: Added.
+
+2011-05-10  Csaba Osztrogonác  <ossy@webkit.org>
+
+        Unreviewed.
+
         Move plugins/plugin-javascript-access-expected.txt from qt-linux platform
         to qt, because it should be used by qt-4.8, qt-arm Linux platforms too.
 
