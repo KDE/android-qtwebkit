@@ -1,3 +1,11 @@
+2011-05-11  Jocelyn Turcotte  <jocelyn.turcotte@nokia.com>
+
+        Reviewed by nobody, build fix.
+
+        [Qt] Fix build on MSVC by only enabling tst_MIMESniffing on linux.
+
+        * tests/tests.pro:
+
 2011-05-05  Prasanth Ullattil  <prasanth.ullattil@nokia.com>
 
         Reviewed by Simon Hausmann.
