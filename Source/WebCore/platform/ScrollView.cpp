@@ -582,7 +582,9 @@ void ScrollView::updateScrollbars(const IntSize& desiredOffset)
     }
 
     if (hasHorizontalScrollbar != (m_horizontalScrollbar != 0) || hasVerticalScrollbar != (m_verticalScrollbar != 0)) {
+        // FIXME: Is frameRectsChanged really necessary here? Have any frame rects changed?
         frameRectsChanged();
+        positionScrollbarLayers();
         updateScrollCorner();
     }
 
@@ -818,6 +820,8 @@ void ScrollView::setFrameRect(const IntRect& newRect)
         return;
 
     Widget::setFrameRect(newRect);
+
+    frameRectsChanged();
 }
 
 void ScrollView::setBoundsSize(const IntSize& newSize)
@@ -835,7 +839,7 @@ void ScrollView::setBoundsSize(const IntSize& newSize)
     if (!m_useFixedLayout)
         contentsResized();
 
-    frameRectsChanged();
+    positionScrollbarLayers();
 }
 
 void ScrollView::setInitialBoundsSize(const IntSize& newSize)
@@ -852,7 +856,6 @@ void ScrollView::frameRectsChanged()
     HashSet<RefPtr<Widget> >::const_iterator end = m_children.end();
     for (HashSet<RefPtr<Widget> >::const_iterator current = m_children.begin(); current != end; ++current)
         (*current)->frameRectsChanged();
-    positionScrollbarLayers();
 }
 
 #if USE(ACCELERATED_COMPOSITING)
