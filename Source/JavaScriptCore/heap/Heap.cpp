@@ -383,6 +383,9 @@ bool Heap::isBusy()
 
 void Heap::collectAllGarbage()
 {
+    if (!m_globalData->dynamicGlobalObject)
+        m_globalData->recompileAllJSFunctions();
+
     reset(DoSweep);
 }
 
