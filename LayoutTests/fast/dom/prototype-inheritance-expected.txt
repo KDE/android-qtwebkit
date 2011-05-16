@@ -649,8 +649,6 @@ PASS inner.XPathException.isInner is true
 PASS inner.XPathException.constructor.isInner is true
 PASS inner.XPathResult.isInner is true
 PASS inner.XPathResult.constructor.isInner is true
-PASS inner.XSLTProcessor.isInner is true
-PASS inner.XSLTProcessor.constructor.isInner is true
 PASS inner.addEventListener.isInner is true
 PASS inner.addEventListener.constructor.isInner is true
 PASS inner.alert.isInner is true

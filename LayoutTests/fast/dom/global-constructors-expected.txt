@@ -3,7 +3,6 @@ This page tests global constructor objects like window.HTMLDocument. If it passe
 PASS: DOMParser.prototype.isPrototypeOf(domParser) should be true and is.
 PASS: XMLHttpRequest.prototype.isPrototypeOf(xmlHttpRequest) should be true and is.
 PASS: XMLSerializer.prototype.isPrototypeOf(xmlSerializer) should be true and is.
-PASS: XSLTProcessor.prototype.isPrototypeOf(xsltProcessor) should be true and is.
 PASS: window.Document.prototype.isPrototypeOf(document) should be true and is.
 PASS: window.HTMLDocument.prototype.isPrototypeOf(document) should be true and is.
 PASS: window.Node.prototype.isPrototypeOf(element) should be true and is.

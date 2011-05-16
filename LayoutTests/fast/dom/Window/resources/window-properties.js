@@ -160,7 +160,6 @@ var propertyInfo = [
     ["XPathEvaluator", "object"],
     ["XPathException", "object"],
     ["XPathResult", "object"],
-    ["XSLTProcessor", "object"],
     ["onload", "object"],
     ["frames", "object"],
     ["parent", "object"],

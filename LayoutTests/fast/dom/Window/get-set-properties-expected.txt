@@ -191,8 +191,6 @@ PASS: canGet('XPathEvaluator') should be 'true' and is.
 PASS: canSet('XPathEvaluator') should be 'true' and is.
 PASS: canGet('XPathResult') should be 'true' and is.
 PASS: canSet('XPathResult') should be 'true' and is.
-PASS: canGet('XSLTProcessor') should be 'true' and is.
-PASS: canSet('XSLTProcessor') should be 'true' and is.
 PASS: canGet('addEventListener') should be 'true' and is.
 PASS: canSet('addEventListener') should be 'true' and is.
 PASS: canGet('alert') should be 'true' and is.

@@ -1874,39 +1874,13 @@ fast/text/wide-zero-width-space.html
 fast/text/word-break-soft-hyphen.html
 fast/text/word-space.html
 
-# ------- failures due to missing support for particular XSLT features
-# xsl:output
-fast/xsl/xslt-doc-enc.xml
-fast/xsl/xslt-url.xml
-fast/xsl/default-html.html
-fast/xsl/xslt-text.html
-fast/xsl/xslt-entity.xml
-fast/xsl/xslt-extra-content-at-end.xml
-# external entities support
-fast/xsl/dtd-in-source-document.xml
-fast/xsl/xslt-second-level-import.xml
-fast/parser/external-entities-in-xslt.xml
-# exslt:node-set() function
-fast/xsl/exslt-node-set.xml
-# xsl:import
-fast/xsl/import-after-comment.xml
-fast/xsl/xslt-import-depth.xml
-fast/xsl/xslt-nested-stylesheets.xml
-# xsl:attribute-set
-fast/xsl/mozilla-tests.xml
-# xsl:sort: lang and case-order
-fast/xsl/sort-locale.xml
-fast/xsl/sort-unicode.xml
-# output formatting issues (might be related to the lack of xsl:output support)
-fast/xsl/xslt-processor.html
-# to be investigated
-fast/xsl/xslt-enc16.xml
-fast/xsl/xslt-enc16to16.xml
-fast/xsl/xslt-enc-cyr.xml
-fast/xsl/xslt-enc.xml
-fast/xsl/xslt-relative-path.xml
-fast/xsl/xslt-missing-namespace-in-xslt.xml
-fast/xsl/xslt_unicode.xml
+# ------- skip due to disabled XSLT support on production branches
+# https://bugs.webkit.org/show_bug.cgi?id=60824
+fast/xsl
+http/tests/misc/location-test-xsl-style-sheet.xml
+http/tests/security/cross-origin-xsl-BLOCKED.html
+http/tests/security/xss-DENIED-xsl-external-entity-redirect.xml
+http/tests/security/xss-DENIED-xsl-external-entity.xml
 
 # https://bugs.webkit.org/show_bug.cgi?id=49743
 fast/xsl/import-non-document-node.xhtml

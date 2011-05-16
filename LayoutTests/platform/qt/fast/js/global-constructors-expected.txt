@@ -312,7 +312,6 @@ PASS XMLSerializer.toString() is '[object XMLSerializerConstructor]'
 PASS XPathEvaluator.toString() is '[object XPathEvaluatorConstructor]'
 PASS XPathException.toString() is '[object XPathExceptionConstructor]'
 PASS XPathResult.toString() is '[object XPathResultConstructor]'
-PASS XSLTProcessor.toString() is '[object XSLTProcessorConstructor]'
 PASS successfullyParsed is true
 
 TEST COMPLETE

@@ -10,3 +10,6 @@ isEmpty($$(SBOX_DPKG_INST_ARCH)):exists(/usr/bin/ld.gold) {
 }
 }
 
+# We use this flag on production branches
+# See https://bugs.webkit.org/show_bug.cgi?id=60824
+CONFIG += production

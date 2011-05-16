@@ -149,9 +149,9 @@ PASS TryAllocate('XMLSerializer') is '[object XMLSerializer]'
 PASS TryAllocate('XPathEvaluator') is '[object XPathEvaluator]'
 PASS TryAllocate('XPathEvaluator') is '[object XPathEvaluator]'
 PASS TryAllocate('XPathEvaluator') is '[object XPathEvaluator]'
-PASS TryAllocate('XSLTProcessor') is '[object XSLTProcessor]'
-PASS TryAllocate('XSLTProcessor') is '[object XSLTProcessor]'
-PASS TryAllocate('XSLTProcessor') is '[object XSLTProcessor]'
+FAIL TryAllocate('XSLTProcessor') should be [object XSLTProcessor]. Was no constructor.
+FAIL TryAllocate('XSLTProcessor') should be [object XSLTProcessor]. Was exception.
+FAIL TryAllocate('XSLTProcessor') should be [object XSLTProcessor]. Was no constructor.
 PASS TryAllocate('Audio') is '[object HTMLAudioElement]'
 PASS TryAllocate('Audio') is '[object HTMLAudioElement]'
 PASS TryAllocate('Audio') is '[object HTMLAudioElement]'
