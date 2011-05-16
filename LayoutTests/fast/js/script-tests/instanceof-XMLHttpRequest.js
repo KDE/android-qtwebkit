@@ -27,7 +27,4 @@ shouldBeFalse("(new Array()) instanceof Worker");
 shouldBeTrue("(new XMLHttpRequest()) instanceof XMLHttpRequest")
 shouldBeFalse("(new Array()) instanceof XMLHttpRequest")
 
-shouldBeTrue("(new XSLTProcessor()) instanceof XSLTProcessor");
-shouldBeFalse("(new Array()) instanceof XSLTProcessor");
-
 var successfullyParsed = true;
