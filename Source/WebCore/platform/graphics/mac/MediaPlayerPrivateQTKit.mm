@@ -1215,6 +1215,7 @@ void MediaPlayerPrivateQTKit::didEnd()
 }
 
 #if USE(ACCELERATED_COMPOSITING)
+#if defined(BUILDING_ON_SNOW_LEOPARD)
 static bool layerIsDescendentOf(PlatformLayer* child, PlatformLayer* descendent)
 {
     if (!child || !descendent)
@@ -1227,6 +1228,7 @@ static bool layerIsDescendentOf(PlatformLayer* child, PlatformLayer* descendent)
 
     return false;
 }
+#endif
 
 void MediaPlayerPrivateQTKit::layerHostChanged(PlatformLayer* rootLayer)
 {
