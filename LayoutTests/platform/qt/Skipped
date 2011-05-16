@@ -1882,6 +1882,7 @@ http/tests/security/cross-origin-xsl-BLOCKED.html
 http/tests/security/xss-DENIED-xsl-external-entity-redirect.xml
 http/tests/security/xss-DENIED-xsl-external-entity.xml
 http/tests/security/xss-DENIED-xsl-document-redirect.xml
+http/tests/security/xss-DENIED-xsl-document.xml
 http/tests/security/contentSecurityPolicy/xsl-allowed.php
 http/tests/security/contentSecurityPolicy/xsl-blocked.php
 fast/parser/external-entities-in-xslt.xml
@@ -2164,6 +2165,10 @@ fast/dom/webtiming-document-open.html
 fast/dom/webtiming-navigate-within-document.html
 http/tests/misc/webtiming-one-redirect.php
 http/tests/misc/webtiming-two-redirects.php
+fast/dom/Window/window-properties-performance.html
+fast/dom/navigation-type-back-forward.html
+fast/dom/navigation-type-navigate.html
+fast/dom/navigation-type-reload.html
 
 # Advanced credential handling
 http/tests/security/401-logout/401-logout.php

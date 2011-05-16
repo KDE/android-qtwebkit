@@ -17,8 +17,6 @@ PASS (new Worker('instanceof-operator-dummy-worker.js')) instanceof Worker is tr
 PASS (new Array()) instanceof Worker is false
 PASS (new XMLHttpRequest()) instanceof XMLHttpRequest is true
 PASS (new Array()) instanceof XMLHttpRequest is false
-PASS (new XSLTProcessor()) instanceof XSLTProcessor is true
-PASS (new Array()) instanceof XSLTProcessor is false
 PASS successfullyParsed is true
 
 TEST COMPLETE
