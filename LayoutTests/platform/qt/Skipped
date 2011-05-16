@@ -1874,13 +1874,19 @@ fast/text/wide-zero-width-space.html
 fast/text/word-break-soft-hyphen.html
 fast/text/word-space.html
 
-# ------- skip due to disabled XSLT support on production branches
+# skip due to disabled XSLT support on production branches
 # https://bugs.webkit.org/show_bug.cgi?id=60824
 fast/xsl
 http/tests/misc/location-test-xsl-style-sheet.xml
 http/tests/security/cross-origin-xsl-BLOCKED.html
 http/tests/security/xss-DENIED-xsl-external-entity-redirect.xml
 http/tests/security/xss-DENIED-xsl-external-entity.xml
+http/tests/security/xss-DENIED-xsl-document-redirect.xml
+http/tests/security/contentSecurityPolicy/xsl-allowed.php
+http/tests/security/contentSecurityPolicy/xsl-blocked.php
+fast/parser/external-entities-in-xslt.xml
+fast/events/xsl-onload.xhtml
+fast/parser/xslt-with-html.xml
 
 # https://bugs.webkit.org/show_bug.cgi?id=49743
 fast/xsl/import-non-document-node.xhtml
@@ -2149,6 +2155,15 @@ fast/dom/webtiming.html
 http/tests/misc/webtiming-ssl.php
 http/tests/misc/webtiming-origins.html
 http/tests/misc/webtiming-slow-load.php
+fast/parser/xslt-with-html.xml
+fast/parser/external-entities-in-xslt.xml
+
+# Web Timing disabled in production branches
+# https://bugs.webkit.org/show_bug.cgi?id=60824
+fast/dom/webtiming-document-open.html
+fast/dom/webtiming-navigate-within-document.html
+http/tests/misc/webtiming-one-redirect.php
+http/tests/misc/webtiming-two-redirects.php
 
 # Advanced credential handling
 http/tests/security/401-logout/401-logout.php
