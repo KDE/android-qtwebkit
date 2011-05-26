@@ -1,3 +1,13 @@
+2011-05-26  Shane Stephens  <shanestephens@google.com>
+
+        Reviewed by James Robinson.
+
+        REGRESSION (r81992): layout triggered by position update fails to apply when transform is updated at same time
+        https://bugs.webkit.org/show_bug.cgi?id=60689
+
+        * transforms/2d/set-transform-and-top-expected.txt: Added.
+        * transforms/2d/set-transform-and-top.html: Added.
+
 2011-05-24  Leo Yang  <leo.yang@torchmobile.com.cn>
 
         Reviewed by Ryosuke Niwa.
