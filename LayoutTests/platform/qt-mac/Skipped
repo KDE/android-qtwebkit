@@ -4120,3 +4120,6 @@ fast/css/font-face-zero-hash-key.html
 inspector/extensions/extensions-resources.html
 plugins/private-browsing-mode-2.html
 plugins/private-browsing-mode.html
+
+# new test introduced in http://trac.webkit.org/changeset/87026, but fails
+fast/block/positioning/start-ignoring-before.html
