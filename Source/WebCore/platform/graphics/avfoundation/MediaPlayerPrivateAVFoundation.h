@@ -149,7 +149,6 @@ protected:
     virtual bool supportsAcceleratedRendering() const = 0;
     virtual void acceleratedRenderingStateChanged();
 #endif
-    virtual bool hasSingleSecurityOrigin() const { return true; }
     virtual MediaPlayer::MovieLoadType movieLoadType() const;
     virtual void prepareForRendering();
     virtual float mediaTimeForTimeValue(float) const = 0;
@@ -241,6 +240,7 @@ protected:
     
     float invalidTime() const { return -1.0f; }
 
+    const String& assetURL() const { return m_assetURL; }
 private:
     MediaPlayer* m_player;
 
