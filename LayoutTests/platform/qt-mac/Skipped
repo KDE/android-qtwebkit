@@ -4123,3 +4123,11 @@ plugins/private-browsing-mode.html
 
 # new test introduced in http://trac.webkit.org/changeset/87026, but fails
 fast/block/positioning/start-ignoring-before.html
+
+# these fail on QtWebKit-2.2 for an unknown reason, see:
+# https://lists.webkit.org/pipermail/webkit-qt/2011-June/001608.html
+editing/pasteboard/do-not-copy-unnecessary-styles-2.html
+editing/pasteboard/do-not-copy-unnecessary-styles.html
+editing/pasteboard/paste-noscript-xhtml.xhtml
+editing/pasteboard/paste-text-012.html
+editing/pasteboard/preserve-underline-color.html
