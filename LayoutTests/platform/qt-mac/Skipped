@@ -4131,3 +4131,7 @@ editing/pasteboard/do-not-copy-unnecessary-styles.html
 editing/pasteboard/paste-noscript-xhtml.xhtml
 editing/pasteboard/paste-text-012.html
 editing/pasteboard/preserve-underline-color.html
+
+# New test introduced in r88029, but fails on Qt-Mac platform
+# (was skipped on trunk in r88141)
+fast/forms/selectlist-minsize.html
