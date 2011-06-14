@@ -27,6 +27,7 @@
 #include <QVariant>
 
 namespace WebCore {
+class Document;
 class Text;
 class Node;
 }
@@ -97,6 +98,7 @@ public:
     static void setSelectTrailingWhitespaceEnabled(QWebPage* page, bool enabled);
     static QVariantList selectedRange(QWebPage* page);
     static QVariantList firstRectForCharacterRange(QWebPage* page, int location, int length);
+    static void confirmComposition(QWebPage*, const char* text);
 
     static bool pauseAnimation(QWebFrame*, const QString& name, double time, const QString& elementId);
     static bool pauseTransitionOfProperty(QWebFrame*, const QString& name, double time, const QString& elementId);
@@ -107,6 +109,7 @@ public:
     static void setDomainRelaxationForbiddenForURLScheme(bool forbidden, const QString& scheme);
     static void setFrameFlatteningEnabled(QWebPage*, bool);
     static void setCaretBrowsingEnabled(QWebPage* page, bool value);
+    static void setAuthorAndUserStylesEnabled(QWebPage*, bool);
     static void setMediaType(QWebFrame* qframe, const QString& type);
     static void setDumpRenderTreeModeEnabled(bool b);
 
@@ -114,6 +117,7 @@ public:
     static void garbageCollectorCollectOnAlternateThread(bool waitUntilDone);
     static void setAutofilled(const QWebElement&, bool enabled);
     static void setJavaScriptProfilingEnabled(QWebFrame*, bool enabled);
+    static void setValueForUser(const QWebElement&, const QString& value);
     static int javaScriptObjectsCount();
     static void clearScriptWorlds();
     static void evaluateScriptInIsolatedWorld(QWebFrame* frame, int worldID, const QString& script);
@@ -157,7 +161,7 @@ public:
 
     static QString markerTextForListItem(const QWebElement& listItem);
     static QVariantMap computedStyleIncludingVisitedInfo(const QWebElement& element);
-    static QString plainText(const QVariant& rng);
+    static QString plainText(const QVariantMap& range);
 
     static void dumpFrameLoader(bool b);
     static void dumpUserGestureInFrameLoader(bool b);
@@ -193,7 +197,9 @@ public:
     static void simulateDesktopNotificationClick(const QString& title);
     static QString viewportAsText(QWebPage*, int deviceDPI, const QSize& deviceSize, const QSize& availableSize);
 
-    static QVariantList nodesFromRect(const QWebElement& document, int x, int y, unsigned top, unsigned right, unsigned bottom, unsigned left, bool ignoreClipping);
+    static void scalePageBy(QWebFrame*, float scale, const QPoint& origin);
+
+    static QVariantList nodesFromRect(const QVariantMap& document, int x, int y, unsigned top, unsigned right, unsigned bottom, unsigned left, bool ignoreClipping);
     static QString responseMimeType(QWebFrame*);
     static void clearOpener(QWebFrame*);
     static void addURLToRedirect(const QString& origin, const QString& destination);
@@ -208,6 +214,14 @@ public:
     static QVariant shadowRoot(const QWebElement&);
     static QVariant ensureShadowRoot(const QWebElement&);
     static void removeShadowRoot(const QWebElement&);
+    static QString shadowPseudoId(const QWebElement&);
+
+    static QString layerTreeAsText(QWebFrame*);
+
+    static void injectInternalsObject(QWebFrame*);
+
+private:
+    static WebCore::Document* getCoreDocumentFromVariantMap(const QVariantMap& document);
 };
 
 #endif
