@@ -1,3 +1,17 @@
+2011-06-01  Jer Noble  <jer.noble@apple.com>
+
+        Reviewed by Eric Carlson.
+
+        Move Full Screen Controllers into WebCore.
+
+        Remove dependency on QTKit from wekitExitFullscreen()
+        https://bugs.webkit.org/show_bug.cgi?id=61843
+
+        WebVideoFullscreenController, WebVideoFullscreenHUDController, and WebWindowAnimation
+        have been moved into WebCore.
+
+        * WebKit.xcodeproj/project.pbxproj:
+
 2011-06-30  Leandro Pereira  <leandro@profusion.mobi>
 
         Reviewed by Simon Hausmann.
