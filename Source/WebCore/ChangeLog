@@ -1,5 +1,12 @@
 2011-06-20  Jer Noble  <jer.noble@apple.com>
 
+        Unreviewed build fix; Fix Leopard WebCore build.
+
+        * platform/mac/WebVideoFullscreenHUDWindowController.mm: On Leopard, NSWindowDelegate
+            is a category, not a protocol.
+
+2011-06-20  Jer Noble  <jer.noble@apple.com>
+
         Unreviewed build fix; Fix 32-bit build.
 
         Code recently moved from WebKit -> WebCore does not pass WebCore's more strict compiler warnings.  Use 
