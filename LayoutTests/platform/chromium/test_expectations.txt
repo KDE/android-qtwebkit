@@ -3995,3 +3995,6 @@ BUGWK60252 MAC GPU : animations/3d/matrix-transform-type-animation.html = IMAGE
 BUGWK60252 MAC GPU : animations/3d/state-at-end-event-transform.html = IMAGE
 
 BUGWK61326 LINUX : fast/storage/storage-detached-iframe.html = PASS CRASH
+
+// New test added for bug 60028, needs rebaselining
+BUGWK60028 : fast/multicol/span/span-as-nested-inline-block-child.html = FAIL

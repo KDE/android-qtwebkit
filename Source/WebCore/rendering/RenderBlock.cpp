@@ -617,7 +617,7 @@ RenderBlock* RenderBlock::columnsBlockForSpanningElement(RenderObject* newChild)
         && !newChild->isInline() && !isAnonymousColumnSpanBlock()) {
         if (style()->specifiesColumns())
             columnsBlockAncestor = this;
-        else if (parent() && parent()->isRenderBlock())
+        else if (!isInline() && parent() && parent()->isRenderBlock())
             columnsBlockAncestor = toRenderBlock(parent())->containingColumnsBlock(false);
     }
     return columnsBlockAncestor;
