@@ -184,7 +184,8 @@ void RenderBlock::destroy()
                         childBox->remove();
                 }
             }
-        }
+        } else if (parent())
+            parent()->dirtyLinesFromChangedChild(this);
     }
 
     m_lineBoxes.deleteLineBoxes(renderArena());
