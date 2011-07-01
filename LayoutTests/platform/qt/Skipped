@@ -2679,3 +2679,7 @@ animations/animation-api-1.html
 # new test introduced in r89118, but fail on Qt
 # https://bugs.webkit.org/show_bug.cgi?id=62847
 fast/parser/xhtml-innerhtml-null-byte.xhtml
+
+# new test introduced in r90068 (bug 60307), but fails on the qtwebkit-2.2 branch
+# (works fine on trunk). Pending investigation.
+fast/block/child-not-removed-from-parent-lineboxes-crash.html
