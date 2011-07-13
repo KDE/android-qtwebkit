@@ -467,6 +467,9 @@ editing/execCommand/find-after-replace.html
 editing/execCommand/paste-1.html
 editing/execCommand/paste-2.html
 
+#Times out
+plugins/windowless_plugin_paint_test.html
+
 # =========================================================================== #
 # Failing Sputnik tests                                                       #
 # =========================================================================== #
@@ -702,10 +705,6 @@ java
 # Missing DRT ability to override 'standard' preferences.
 fast/dom/Window/timer-resume-on-navigation-back.html
 loader/go-back-to-different-window-size.html
-
-# Missing layoutTestController.displayInvalidatedRegion()
-plugins/invalidate_rect.html
-plugins/windowless_plugin_paint_test.html
 
 # Missing layoutTestController.findString() http://webkit.org/b/50236
 editing/text-iterator/findString.html
