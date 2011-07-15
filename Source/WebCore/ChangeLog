@@ -385,17 +385,6 @@
         * loader/DocumentLoader.cpp: (WebCore::DocumentLoader::detachFromFrame): Rollout the fix
         for bug 62764.
 
-2011-06-24  Alexis Menard  <alexis.menard@openbossa.org>
-
-        Unreviewed build fix.
-
-        Build fix on Linux when using the GStreamer backend.
-
-        No new tests, just a build fix.
-
-        * platform/graphics/gstreamer/PlatformVideoWindowQt.cpp:
-        (FullScreenVideoWindow::keyPressEvent):
-
 2011-06-23  Abhishek Arya  <inferno@chromium.org>
 
         Reviewed by Adam Barth.
