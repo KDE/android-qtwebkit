@@ -1,3 +1,21 @@
+2011-07-12  Hui Huang  <Hui.2.Huang@nokia.com>
+
+        Reviewed by Laszlo Gombos.
+
+        [Qt] Fix compiling errors with QtWebkit 2.2 WINSCW build.
+        https://bugs.webkit.org/show_bug.cgi?id=64391
+
+        (QtWebKit-2.2 only, patch not in webkit trunk)
+
+        * bindings/generic/ActiveDOMCallback.cpp:
+        * css/CSSStyleSelector.h:
+        * page/PrintContext.cpp:
+        * page/PrintContext.h:
+        * platform/network/HTTPHeaderMap.cpp:
+        * xml/XPathFunctions.cpp:
+        * xml/XPathPredicate.cpp:
+        * xml/XPathResult.cpp:
+
 2011-07-16  Sergey Glazunov  <serg.glazunov@gmail.com>
 
         DOMWindow::open performs a security check on a wrong window

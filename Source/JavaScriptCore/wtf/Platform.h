@@ -1019,6 +1019,11 @@
 #define ENABLE_JIT 0
 #endif
 
+/* Disable JIT for WINSCW Symbian Emulator */
+#if !defined(ENABLE_JIT) && COMPILER(WINSCW)
+#define ENABLE_JIT 0
+#endif
+
 /* The JIT is enabled by default on all x86, x64-64, ARM & MIPS platforms. */
 #if !defined(ENABLE_JIT) \
     && (CPU(X86) || CPU(X86_64) || CPU(ARM) || CPU(MIPS)) \

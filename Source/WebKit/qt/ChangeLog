@@ -1,3 +1,14 @@
+2011-07-12  Hui Huang  <Hui.2.Huang@nokia.com>
+
+        Reviewed by Laszlo Gombos.
+
+        [Qt] Fix compiling errors with QtWebkit 2.2 WINSCW build.
+        https://bugs.webkit.org/show_bug.cgi?id=64391
+
+        (QtWebKit-2.2 only, patch not in webkit trunk)
+
+        * symbian/bwins/QtWebKitu.def:
+
 2011-07-19  Caio Marcelo de Oliveira Filho  <caio.oliveira@openbossa.org>
 
         [Qt] Improve documentation of QWebView::setPage()
