@@ -1,5 +1,14 @@
 2011-07-26  Alexis Menard  <alexis.menard@openbossa.org>
 
+        Unreviewed build fix for Qt/Linux.
+
+        On platforms with no glib and gstreamer we should not build javascriptcore
+        with the Glib support. This is related to http://trac.webkit.org/changeset/91752.
+
+        * wtf/wtf.pri:
+
+2011-07-26  Alexis Menard  <alexis.menard@openbossa.org>
+
         Reviewed by Andreas Kling.
 
         [Qt] Change default backend to use GStreamer on Linux and QuickTime on Mac.
