@@ -2682,3 +2682,7 @@ fast/parser/xhtml-innerhtml-null-byte.xhtml
 # new test introduced in r90068 (bug 60307), but fails on the qtwebkit-2.2 branch
 # (works fine on trunk). Pending investigation.
 fast/block/child-not-removed-from-parent-lineboxes-crash.html
+
+# test timeouts in 2.2 buildbots, even though it works in our local test environment
+# it's enabled on trunk.
+plugins/mouse-click-plugin-clears-selection.html
