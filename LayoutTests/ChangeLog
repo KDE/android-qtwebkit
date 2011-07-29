@@ -1,3 +1,10 @@
+2011-07-29  Csaba Osztrogonác  <ossy@webkit.org>
+
+        [Qt][ARM]REGRESSION(r91752): It made audio related tests fail
+        https://bugs.webkit.org/show_bug.cgi?id=65369
+
+        * platform/qt-arm/Skipped: Skip failing tests.
+
 2011-07-27  Ryosuke Niwa  <rniwa@webkit.org>
 
         Calling window.find immediately after mutating the document crashes WebKit.
