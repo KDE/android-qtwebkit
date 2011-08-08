@@ -2687,3 +2687,13 @@ fast/block/child-not-removed-from-parent-lineboxes-crash.html
 # test timeouts in 2.2 buildbots, even though it works in our local test environment
 # it's enabled on trunk.
 plugins/mouse-click-plugin-clears-selection.html
+
+# introduced by r92142:
+#   Source/WebCore: Never override the policy URL on form submissions
+#   https://bugs.webkit.org/show_bug.cgi?id=61809
+# On 2.2 our DRT doesn't support third-party-cookies configuration
+# (layoutTestController.setAlwaysAcceptCookies() and therefore
+# these tests fail.
+http/tests/security/cookies/third-party-cookie-blocking-main-frame.html
+http/tests/security/cookies/third-party-cookie-blocking-user-action.html
+http/tests/security/cookies/third-party-cookie-blocking.html
