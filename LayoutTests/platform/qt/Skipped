@@ -2697,3 +2697,8 @@ plugins/mouse-click-plugin-clears-selection.html
 http/tests/security/cookies/third-party-cookie-blocking-main-frame.html
 http/tests/security/cookies/third-party-cookie-blocking-user-action.html
 http/tests/security/cookies/third-party-cookie-blocking.html
+
+# introduced in r92966, but times-out in our 2.2 branches
+# the original test-case (it's a crash test) passes in our local build
+# environment, I guess there's something missing in our DRT.
+editing/selection/select-start-remove-root-crash.html
