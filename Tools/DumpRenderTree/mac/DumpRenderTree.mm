@@ -51,6 +51,7 @@
 #import "StorageTrackerDelegate.h"
 #import "UIDelegate.h"
 #import "WebArchiveDumpSupport.h"
+#import "WebCoreTestSupport.h"
 #import "WorkQueue.h"
 #import "WorkQueueItem.h"
 #import <Carbon/Carbon.h>
@@ -1053,6 +1054,9 @@ static void resetWebViewToConsistentStateBeforeTesting()
     [webView _setMinimumTimerInterval:[WebView _defaultMinimumTimerInterval]];
 
     resetDefaultsToConsistentValues();
+
+    if (gLayoutTestController)
+        WebCoreTestSupport::resetInternalsObject([mainFrame globalContext]);
 
     [[mainFrame webView] setSmartInsertDeleteEnabled:YES];
     [[[mainFrame webView] inspector] setJavaScriptProfilingEnabled:NO];

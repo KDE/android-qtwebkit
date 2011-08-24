@@ -28,6 +28,8 @@
 
 namespace WebCore {
 
+const char* Internals::internalsId = "internals";
+
 PassRefPtr<Internals> Internals::create()
 {
     return adoptRef(new Internals);
@@ -41,4 +43,8 @@ Internals::Internals()
 {
 }
 
+void Internals::reset(Document*)
+{
+// FIXME: Implement
+}
 }

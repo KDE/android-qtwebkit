@@ -252,6 +252,7 @@ void TestShell::resetTestController()
     if (m_drtDevToolsClient)
         m_drtDevToolsClient->reset();
     webView()->mainFrame()->clearOpener();
+    WebTestingSupport::resetInternalsObject(webView()->mainFrame());
 }
 
 void TestShell::loadURL(const WebURL& url)

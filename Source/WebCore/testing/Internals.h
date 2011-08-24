@@ -36,6 +36,8 @@ public:
     static PassRefPtr<Internals> create();
     virtual ~Internals();
 
+    void reset(Document*);
+    static const char* internalsId;
 private:
     Internals();
 };

@@ -35,6 +35,7 @@ class WebFrame;
 class WebTestingSupport {
 public:
     WEBKIT_API static void injectInternalsObject(WebFrame*);
+    WEBKIT_API static void resetInternalsObject(WebFrame*);
 };
 
 }
