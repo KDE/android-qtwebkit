@@ -25,5 +25,7 @@
 
 module window {
     interface [OmitConstructor] Internals {
+        void setPasswordEchoEnabled(in Document document, in boolean enabled) raises(DOMException);
+        void setPasswordEchoDurationInSeconds(in Document document, in double durationInSeconds) raises(DOMException);
     };
 }

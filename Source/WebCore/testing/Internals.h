@@ -26,10 +26,13 @@
 #ifndef Internals_h
 #define Internals_h
 
+#include "ExceptionCode.h"
 #include <wtf/PassRefPtr.h>
 #include <wtf/RefCounted.h>
 
 namespace WebCore {
+
+class Document;
 
 class Internals : public RefCounted<Internals> {
 public:
@@ -37,9 +40,19 @@ public:
     virtual ~Internals();
 
     void reset(Document*);
+
+    void setPasswordEchoEnabled(Document*, bool enabled, ExceptionCode&);
+    void setPasswordEchoDurationInSeconds(Document*, double durationInSeconds, ExceptionCode&);
+
     static const char* internalsId;
+
 private:
     Internals();
+
+    double passwordEchoDurationInSecondsBackup;
+    bool passwordEchoEnabledBackup : 1;
+    bool passwordEchoDurationInSecondsBackedUp : 1;
+    bool passwordEchoEnabledBackedUp : 1;
 };
 
 } // namespace WebCore
