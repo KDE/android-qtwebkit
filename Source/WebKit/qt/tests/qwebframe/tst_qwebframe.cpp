@@ -649,7 +649,7 @@ private slots:
     void setContent_data();
     void setContent();
     void setCacheLoadControlAttribute();
-    //void setUrlWithPendingLoads();
+    void setUrlWithPendingLoads();
     void setUrlWithFragment_data();
     void setUrlWithFragment();
     void setUrlToEmpty();
@@ -2513,9 +2513,7 @@ void tst_QWebFrame::setHtmlWithResource()
     QCOMPARE(spy.count(), 1);
 
     QCOMPARE(frame->evaluateJavaScript("document.images.length").toInt(), 1);
-    QEXPECT_FAIL("", "https://bugs.webkit.org/show_bug.cgi?id=63235", Continue);
     QCOMPARE(frame->evaluateJavaScript("document.images[0].width").toInt(), 128);
-    QEXPECT_FAIL("", "https://bugs.webkit.org/show_bug.cgi?id=63235", Continue);
     QCOMPARE(frame->evaluateJavaScript("document.images[0].height").toInt(), 128);
 
     QString html2 =
@@ -2534,7 +2532,6 @@ void tst_QWebFrame::setHtmlWithResource()
     QCOMPARE(spy.size(), 2);
 
     QWebElement p = frame->documentElement().findAll("p").at(0);
-    QEXPECT_FAIL("", "https://bugs.webkit.org/show_bug.cgi?id=63235", Continue);
     QCOMPARE(p.styleProperty("color", QWebElement::CascadedStyle), QLatin1String("red"));
 }
 
@@ -3369,16 +3366,12 @@ void tst_QWebFrame::webElementSlotOnly()
     QCOMPARE(evalJS("myWebElementSlotObject.tagName"), QString("BODY"));
 }
 
-// [Qt] Fix tst_QWebFrame::setUrlWithPendingLoads() API test
-// https://bugs.webkit.org/show_bug.cgi?id=63237
-/*
 void tst_QWebFrame::setUrlWithPendingLoads()
 {
     QWebPage page;
     page.mainFrame()->setHtml("<img src='dummy:'/>");
     page.mainFrame()->setUrl(QUrl("about:blank"));
 }
-*/
 
 void tst_QWebFrame::setUrlWithFragment_data()
 {
