@@ -1,3 +1,16 @@
+2011-08-30  Abhishek Arya  <inferno@chromium.org>
+
+        Style not updated for table parts in :before, :after content.
+        https://bugs.webkit.org/show_bug.cgi?id=66141        
+
+        Reviewed by Dave Hyatt.
+
+        Tests: fast/table/table-before-child-style-update.html
+               fast/table/table-row-before-child-style-update.html
+
+        * rendering/RenderObjectChildList.cpp:
+        (WebCore::RenderObjectChildList::updateBeforeAfterContent):
+
 2011-08-25  Abhishek Arya  <inferno@chromium.org>
 
         Incorrect layout of :before and :after content, with display
