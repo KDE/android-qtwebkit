@@ -75,6 +75,7 @@ void LayoutTestController::reset()
 
     DumpRenderTreeSupportQt::dumpEditingCallbacks(false);
     DumpRenderTreeSupportQt::dumpFrameLoader(false);
+    DumpRenderTreeSupportQt::dumpProgressFinishedCallback(false);
     DumpRenderTreeSupportQt::dumpUserGestureInFrameLoader(false);
     DumpRenderTreeSupportQt::dumpResourceLoadCallbacks(false);
     DumpRenderTreeSupportQt::dumpResourceResponseMIMETypes(false);
@@ -255,6 +256,11 @@ void LayoutTestController::dumpEditingCallbacks()
 void LayoutTestController::dumpFrameLoadCallbacks()
 {
     DumpRenderTreeSupportQt::dumpFrameLoader(true);
+}
+
+void LayoutTestController::dumpProgressFinishedCallback()
+{
+    DumpRenderTreeSupportQt::dumpProgressFinishedCallback(true);
 }
 
 void LayoutTestController::dumpUserGestureInFrameLoadCallbacks()
