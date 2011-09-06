@@ -124,7 +124,7 @@ HistoryItem::HistoryItem(const KURL& url, const String& target, const String& pa
     , m_documentSequenceNumber(generateSequenceNumber())
     , m_next(0)
     , m_prev(0)
-{    
+{
     iconDatabase().retainIconForPageURL(m_urlString);
 }
 
@@ -132,7 +132,7 @@ HistoryItem::~HistoryItem()
 {
     ASSERT(!m_cachedPage);
     iconDatabase().releaseIconForPageURL(m_urlString);
-#if PLATFORM(ANDROID)
+#if PLATFORM(ANDROID) && !PLATFORM(QT)
     if (m_bridge)
         m_bridge->detachHistoryItem();
 #endif

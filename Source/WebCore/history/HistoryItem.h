@@ -44,7 +44,7 @@ typedef struct objc_object* id;
 #include <QDataStream>
 #endif
 
-#if PLATFORM(ANDROID)
+#if PLATFORM(ANDROID) && !PLATFORM(QT)
 #include "AndroidWebHistoryBridge.h"
 #endif
 
@@ -202,7 +202,7 @@ public:
     QDataStream& saveState(QDataStream& out, int version) const;
 #endif
 
-#if PLATFORM(ANDROID)
+#if PLATFORM(ANDROID) && !PLATFORM(QT)
     void setBridge(AndroidWebHistoryBridge* bridge);
     AndroidWebHistoryBridge* bridge() const;
 #endif
@@ -295,7 +295,7 @@ private:
     QVariant m_userData;
 #endif
 
-#if PLATFORM(ANDROID)
+#if PLATFORM(ANDROID) && !PLATFORM(QT)
     RefPtr<AndroidWebHistoryBridge> m_bridge;
 #endif
 
