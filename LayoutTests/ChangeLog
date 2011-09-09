@@ -1,3 +1,14 @@
+2011-09-08  Csaba Osztrogonác  <ossy@webkit.org>
+
+        [Qt]Update layout test results for newer Qt 4.8.x
+        https://bugs.webkit.org/show_bug.cgi?id=64527
+
+        Because of http://qt.gitorious.org/qt/qt/commit/429f0507a68f4aa686449308af770ce5cf2c913f
+        we have to update expected files for 504 layout tests. Additionally it made 1 test fail.
+
+        * platform/qt-4.8/Skipped: Skip svg/text/lengthAdjust-text-metrics.html, because it fails.
+        * platform/qt-4.8/ [...] : Add Qt 4.8 specific expected results for 504 tests.
+
 2011-09-06  Abhishek Arya  <inferno@chromium.org>
 
         Style not propagated to anonymous boxes and anonymous
