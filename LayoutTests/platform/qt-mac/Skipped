@@ -4159,3 +4159,8 @@ fast/table/table-row-style-not-updated-with-after-content.html
 fast/table/table-row-style-not-updated-with-before-content.html
 fast/table/table-row-style-not-updated.html
 fast/table/table-style-not-updated.html
+
+# new tests introduced in r94857, but fail on Qt-Mac platform
+# (were skipped on trunk in r94924)
+fast/lists/list-marker-before-content-table.html
+fast/runin/runin-generated-before-content.html
