@@ -1,3 +1,205 @@
+2011-09-08  Jarred Nicholls  <jarred@sencha.com>
+
+        frame-loading-via-document-write.html test cases have extra slash in path
+        https://bugs.webkit.org/show_bug.cgi?id=67784
+        
+        Removing extra slash in path: file:////tmp/... => file:///tmp/...
+
+        Reviewed by Andreas Kling.
+
+        * fast/dom/frame-loading-via-document-write.html:
+        * http/tests/security/frame-loading-via-document-write.html:
+
+2011-09-09  Abhishek Arya  <inferno@chromium.org>
+
+        Unreviewed. Chromium, GTK, Qt rebaselines for r94857.
+
+        * platform/chromium-linux/fast/lists/list-marker-before-content-table-expected.png: Added.
+        * platform/chromium-linux/fast/runin/runin-generated-before-content-expected.png: Added.
+        * platform/chromium-win-xp/fast/lists: Removed.
+        * platform/chromium-win/fast/lists/list-marker-before-content-table-expected.png: Added.
+        * platform/chromium-win/fast/runin/runin-generated-before-content-expected.png: Added.
+        * platform/gtk/fast/lists/list-marker-before-content-table-expected.txt: Added.
+        * platform/gtk/fast/runin/runin-generated-before-content-expected.txt: Added.
+        * platform/mac/fast/lists/list-marker-before-content-table-expected.txt: Added.
+        * platform/mac/fast/runin/runin-generated-before-content-expected.txt: Added.
+        * platform/qt/fast/lists/list-marker-before-content-table-expected.txt: Added.
+        * platform/qt/fast/runin/runin-generated-before-content-expected.txt: Added.
+
+2011-09-09  Csaba Osztrogonác  <ossy@webkit.org>
+
+        [Qt] Unreviewed gardening after r94857. Add platform specific expected files.
+
+        * platform/qt/fast/lists/list-marker-before-content-table-expected.png: Added.
+        * platform/qt/fast/lists/list-marker-before-content-table-expected.txt: Added.
+        * platform/qt/fast/runin/runin-generated-before-content-expected.png: Added.
+        * platform/qt/fast/runin/runin-generated-before-content-expected.txt: Added.
+
+2011-09-09  Dominic Mazzoni  <dmazzoni@google.com>
+
+        Add a test to catch a case where adjacent continuations were
+        causing nodes to get added to the accessibility tree twice, leading
+        to an assertion failure or a crash. The test expectations are
+        currently Mac-specific, so added the test to the Skipped file for
+        gtk and win.
+        https://bugs.webkit.org/show_bug.cgi?id=61805
+
+        Reviewed by Chris Fleizach.
+
+        * accessibility/adjacent-continuations-cause-assertion-failure.html: Added.
+        * platform/mac/accessibility/adjacent-continuations-cause-assertion-failure-expected.txt: Added.
+
+2011-09-08  Abhishek Arya  <inferno@chromium.org>
+
+        :before content rendering issues with list markers and run-ins.
+        https://bugs.webkit.org/show_bug.cgi?id=67735
+
+        Reviewed by Dave Hyatt.
+
+        * fast/lists/list-marker-before-content-table-expected.png: Added.
+        * fast/lists/list-marker-before-content-table-expected.txt: Added.
+        * fast/lists/list-marker-before-content-table.html: Added.
+        * fast/runin/runin-generated-before-content-expected.png: Added.
+        * fast/runin/runin-generated-before-content-expected.txt: Added.
+        * fast/runin/runin-generated-before-content.html: Added.
+
+2011-09-10  Ken Buchanan <kenrb@chromium.org>
+
+        Crash due to bad data in SVGDocumentExtensions m_pendingResources.
+        https://bugs.webkit.org/show_bug.cgi?id=67488
+
+        Reviewed by Nikolas Zimmermann.
+
+        Test added: validating that the crash referenced in the bug is not present.
+
+        * svg/dom/SVGStyledElement-pendingResource-crash.html: Added.
+        * svg/dom/SVGStyledElement-pendingResource-crash-expected.txt: Added.
+        * svg/dom/resources/SVGStyledElement-pendingResource-crash.svg: Added.
+
+2011-09-08  Csaba Osztrogonác  <ossy@webkit.org>
+
+        [Qt]Update layout test results for newer Qt 4.8.x
+        https://bugs.webkit.org/show_bug.cgi?id=64527
+
+        Because of http://qt.gitorious.org/qt/qt/commit/429f0507a68f4aa686449308af770ce5cf2c913f
+        we have to update expected files for 504 layout tests. Additionally it made 1 test fail.
+
+        * platform/qt-4.8/Skipped: Skip svg/text/lengthAdjust-text-metrics.html, because it fails.
+        * platform/qt-4.8/ [...] : Add Qt 4.8 specific expected results for 504 tests.
+
+2011-09-06  Abhishek Arya  <inferno@chromium.org>
+
+        Style not propagated to anonymous boxes and anonymous
+        inline-blocks.
+        https://bugs.webkit.org/show_bug.cgi?id=67364
+
+        Add comments explaining what the test does.
+
+        Reviewed by James Robinson.
+
+        * fast/ruby/ruby-block-style-not-updated-with-before-after-content.html:
+        * fast/ruby/ruby-block-style-not-updated.html:
+        * fast/ruby/ruby-inline-style-not-updated-with-before-after-content.html:
+        * fast/ruby/ruby-inline-style-not-updated.html:
+        * fast/table/table-before-child-style-update.html:
+        * fast/table/table-row-before-child-style-update.html:
+        * fast/table/table-row-style-not-updated-with-after-content.html:
+        * fast/table/table-row-style-not-updated-with-before-content.html:
+        * fast/table/table-style-not-updated.html:
+
+2011-09-05  Abhishek Arya  <inferno@chromium.org>
+
+        Unreviewed. Qt rebaselines for r94543.
+
+        * platform/qt/fast/css-generated-content/table-before-after-child-add-expected.txt:
+        * platform/qt/fast/css-generated-content/table-cell-before-after-child-add-expected.txt:
+        * platform/qt/fast/css-generated-content/table-row-before-after-child-add-expected.txt:
+        * platform/qt/fast/css-generated-content/table-table-before-after-child-add-expected.txt:
+        * platform/qt/fast/ruby/ruby-block-style-not-updated-expected.txt: Added.
+        * platform/qt/fast/ruby/ruby-block-style-not-updated-with-before-after-content-expected.txt: Added.
+        * platform/qt/fast/ruby/ruby-inline-style-not-updated-expected.txt: Added.
+        * platform/qt/fast/ruby/ruby-inline-style-not-updated-with-before-after-content-expected.txt: Added.
+        * platform/qt/fast/table/table-after-child-in-table-expected.txt:
+        * platform/qt/fast/table/table-before-child-in-table-expected.txt:
+        * platform/qt/fast/table/table-cell-after-child-in-table-expected.txt:
+        * platform/qt/fast/table/table-cell-before-child-in-table-expected.txt:
+        * platform/qt/fast/table/table-row-after-child-in-table-expected.txt:
+        * platform/qt/fast/table/table-row-before-child-in-table-expected.txt:
+        * platform/qt/fast/table/table-row-style-not-updated-expected.txt: Added.
+        * platform/qt/fast/table/table-row-style-not-updated-with-after-content-expected.txt: Added.
+        * platform/qt/fast/table/table-row-style-not-updated-with-before-content-expected.txt: Added.
+        * platform/qt/fast/table/table-style-not-updated-expected.txt: Added.
+
+2011-09-05  Abhishek Arya  <inferno@chromium.org>
+
+        Unreviewed. Rebaselines for r94541.
+
+        * platform/qt/fast/multicol/span/anonymous-split-block-crash-expected.txt:
+        * platform/qt/fast/multicol/span/clone-anonymous-block-non-inline-child-crash-expected.txt:
+
+2011-09-04  Abhishek Arya  <inferno@chromium.org>
+
+        Style not propagated to anonymous boxes and anonymous
+        inline-blocks.
+        https://bugs.webkit.org/show_bug.cgi?id=67364
+
+        Reviewed by James Robinson.
+
+        None of the different color boxes should overlap. If they overlap, test fails.
+
+        * fast/ruby/ruby-block-style-not-updated-expected.png: Added.
+        * fast/ruby/ruby-block-style-not-updated-expected.txt: Added.
+        * fast/ruby/ruby-block-style-not-updated-with-before-after-content-expected.png: Added.
+        * fast/ruby/ruby-block-style-not-updated-with-before-after-content-expected.txt: Added.
+        * fast/ruby/ruby-block-style-not-updated-with-before-after-content.html: Added.
+        * fast/ruby/ruby-block-style-not-updated.html: Added.
+        * fast/ruby/ruby-inline-style-not-updated-expected.png: Added.
+        * fast/ruby/ruby-inline-style-not-updated-expected.txt: Added.
+        * fast/ruby/ruby-inline-style-not-updated-with-before-after-content-expected.png: Added.
+        * fast/ruby/ruby-inline-style-not-updated-with-before-after-content-expected.txt: Added.
+        * fast/ruby/ruby-inline-style-not-updated-with-before-after-content.html: Added.
+        * fast/ruby/ruby-inline-style-not-updated.html: Added.
+        * fast/table/table-row-style-not-updated-expected.png: Added.
+        * fast/table/table-row-style-not-updated-expected.txt: Added.
+        * fast/table/table-row-style-not-updated-with-after-content-expected.png: Added.
+        * fast/table/table-row-style-not-updated-with-after-content-expected.txt: Added.
+        * fast/table/table-row-style-not-updated-with-after-content.html: Added.
+        * fast/table/table-row-style-not-updated-with-before-content-expected.png: Added.
+        * fast/table/table-row-style-not-updated-with-before-content-expected.txt: Added.
+        * fast/table/table-row-style-not-updated-with-before-content.html: Added.
+        * fast/table/table-row-style-not-updated.html: Added.
+        * fast/table/table-style-not-updated-expected.png: Added.
+        * fast/table/table-style-not-updated-expected.txt: Added.
+        * fast/table/table-style-not-updated.html: Added.
+        * platform/mac/fast/css-generated-content/table-before-after-child-add-expected.txt:
+        * platform/mac/fast/css-generated-content/table-cell-before-after-child-add-expected.txt:
+        * platform/mac/fast/css-generated-content/table-row-before-after-child-add-expected.txt:
+        * platform/mac/fast/css-generated-content/table-table-before-after-child-add-expected.txt:
+        * platform/mac/fast/table/table-after-child-in-table-expected.txt:
+        * platform/mac/fast/table/table-before-child-in-table-expected.txt:
+        * platform/mac/fast/table/table-cell-after-child-in-table-expected.txt:
+        * platform/mac/fast/table/table-cell-before-child-in-table-expected.txt:
+        * platform/mac/fast/table/table-row-after-child-in-table-expected.txt:
+        * platform/mac/fast/table/table-row-before-child-in-table-expected.txt:
+
+2011-09-05  Abhishek Arya  <inferno@chromium.org>
+
+        Crash in RenderObjectChildList::destroyLeftOverChildren()
+        https://bugs.webkit.org/show_bug.cgi?id=64753
+
+        Reviewed by James Robinson.
+
+        anonymous-split-block-crash rendering was already wrong. The fix prevents
+        the tree to go bad and hence does not do the column-span rendering. same issue
+        with clone-anonymous-block-non-inline-child-crash test.
+
+        * fast/multicol/column-span-parent-continuation-crash-expected.txt: Added.
+        * fast/multicol/column-span-parent-continuation-crash.html: Added.
+        * platform/mac/fast/multicol/span/anonymous-split-block-crash-expected.png:
+        * platform/mac/fast/multicol/span/anonymous-split-block-crash-expected.txt:
+        * platform/mac/fast/multicol/span/clone-anonymous-block-non-inline-child-crash-expected.png:
+        * platform/mac/fast/multicol/span/clone-anonymous-block-non-inline-child-crash-expected.txt:
+
 2011-09-04  Abhishek Arya  <inferno@chromium.org>
 
         Crash in Range::processAncestorsAndTheirSiblings.
